@@ -1,6 +1,8 @@
-package proxy;
+package proxy.virtualproxy;
 
-public class RealImage implements Image{
+import proxy.virtualproxy.Image;
+
+public class RealImage implements Image {
     private String url;
 
     public RealImage(String url) {

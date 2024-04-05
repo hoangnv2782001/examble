@@ -1,4 +1,4 @@
-package composite;
+package decorator;
 
 public class TeamLeader extends EmployeeDecorator {
 

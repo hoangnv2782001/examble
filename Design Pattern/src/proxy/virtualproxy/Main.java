@@ -1,20 +1,18 @@
-package proxy;
+package proxy.virtualproxy;
 
 public class Main {
     /**
-     *
+     * virtual proxy : tạo một object trung gian dùng để call real  object khi cần :
+     * Ví dụ : lazy loading trong hibernate khi sử dụng lazy load sẽ trả về một proxy và
+     * khi cần dữ liệu sẽ gọi proxy để lấy dữ liệu
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Init proxy image: ");
-        ProxyImage proxyImage = new ProxyImage("http://gpcoder.com/favicon.ico");
 
-        System.out.println("---");
-        System.out.println("Call real service 1st: ");
+        ProxyImage proxyImage = new ProxyImage("1234456788");
+
         proxyImage.showImage();
 
-        System.out.println("---");
-        System.out.println("Call real service 2nd: ");
         proxyImage.showImage();
     }
 }

@@ -1,4 +1,4 @@
-package composite;
+package decorator;
 
 import java.util.Date;
 

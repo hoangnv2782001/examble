@@ -1,4 +1,4 @@
-package composite;
+package decorator;
 
 public class TeamManager extends EmployeeDecorator{
     protected TeamManager(Component employee) {
