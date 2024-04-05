@@ -1,6 +1,10 @@
 package proxy;
 
 public class Main {
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("Init proxy image: ");
         ProxyImage proxyImage = new ProxyImage("http://gpcoder.com/favicon.ico");

@@ -4,9 +4,9 @@ import java.util.Date;
 
 public abstract class EmployeeDecorator implements Component{
 
-    protected EmployeeConcrate employee;
+    protected Component employee;
 
-    protected EmployeeDecorator(EmployeeConcrate employee) {
+    protected EmployeeDecorator(Component employee) {
         this.employee = employee;
     }
 
@@ -23,7 +23,6 @@ public abstract class EmployeeDecorator implements Component{
     @Override
     public void terminate(Date terminateDate) {
         employee.terminate(terminateDate);
-    }
     }
 }
 

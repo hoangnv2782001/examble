@@ -1,7 +1,8 @@
 package composite;
 
 public class TeamMember extends EmployeeDecorator{
-    protected TeamMember(EmployeeComponent employee) {
+
+    protected TeamMember(Component employee) {
         super(employee);
     }
 
