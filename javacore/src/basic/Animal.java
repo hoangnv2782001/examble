@@ -7,8 +7,35 @@ package basic;
  */
 public class Animal {
 
+
+    // biến static : biến của class chi sẻ chung với mọi object
+    private static int a;
+
+    // biến final là biến hằng số và không thể được thay đổi trong quá trình thực thi
+    private final int b = 10;
+
+    // khôi static gọi kh
+    static {
+        a = 10;
+    }
+
+
+    /**
+     * staic method : sử dụng mà không cần tạo instance
+     */
+    public static void dislay(){
+        System.out.println("hoang 123 "+a );
+    }
+
+
+    // method final khoong thể overrride
+    public final void test(){
+
+    }
+
     /**
      * constructor khởi tạo khi gọi object
+     * this tham chiếu đến instance được khởi tạo
      * @param name
      * @param age
      */
@@ -28,7 +55,8 @@ public class Animal {
 
 
     public String getName() {
-        return name;
+
+        return name +a;
     }
 
     public void setName(String name) {
@@ -45,6 +73,12 @@ public class Animal {
 
     public static void main(String[] args) {
         Animal animal = new Animal("dog",2);
+
+
+        System.out.println( animal.getName());
+
+        Animal.dislay();
+
     }
 
 

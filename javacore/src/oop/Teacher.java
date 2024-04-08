@@ -5,6 +5,15 @@ package oop;
  * acccess modifier
  */
 public class Teacher extends Human{
+
+    /**
+     * super từ khóa tham chiếu đến class cha có thể dùng để :
+     *  + call constructor
+     *  + call method cua
+     * @param name
+     * @param age
+     * @param job
+     */
     public Teacher(String name, int age, String job) {
         super(name, age, job);
     }
