@@ -1,6 +1,15 @@
 package basic;
 
-public abstract class Test2 {
+public  class Test2 {
+
+
+    public Test2(){
+
+    }
+
+    public Test2(String a){
+
+    }
 //
 //    @Override
 //    public void dislay() {
