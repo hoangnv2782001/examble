@@ -33,9 +33,11 @@ public class Main {
 
         supliExamble();
 
+        // method reference
         Consumer<Integer> consumer = System.out::println;
 
         consumer.accept(3);
+
 
 
 

@@ -8,6 +8,8 @@ import java.util.Locale;
 
 public class DateTimeExamble {
     public static void main(String[] args) {
+
+        // local datetime
         LocalDateTime localDateTime = LocalDateTime.now();
 
         System.out.println(localDateTime);
