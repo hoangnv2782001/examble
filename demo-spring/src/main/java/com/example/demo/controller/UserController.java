@@ -59,7 +59,7 @@ public class UserController {
     }
 
     /**
-     * delete user 
+     * delete user
      * @param id của user delete
      * @return
      */
