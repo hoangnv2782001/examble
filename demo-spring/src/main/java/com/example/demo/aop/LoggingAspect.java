@@ -46,7 +46,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Pointcut("execution(* com.example.demo.controller.*.*.(..)")
+    @Pointcut("execution(* com.example.demo.controller.*.*(..))")
     public void loggingController(){
 
     }
@@ -67,7 +67,7 @@ public class LoggingAspect {
     }
 
     @Around("loggingController()")
-    public Object employeeAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
+    public Object loggingAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
         System.out.println("Before ....");
         Object value = null;
         try {

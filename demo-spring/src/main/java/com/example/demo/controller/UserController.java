@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dto.UserDto;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.UserService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
+    private final UserService userService;
     /**
      * userrepo sẽ được tự động khởi tạo và inject thông qua contructor
      */
@@ -33,16 +35,7 @@ public class UserController {
     }
 
 
-    /**
-     *
-     * @param userDto thông tin user mới
-     * @return
-     */
-    @PostMapping
-    public ResponseEntity<?> createUser(@RequestBody UserDto userDto){
 
-        return ResponseEntity.ok(userRepository.save(User.builder().name(userDto.getName()).age(userDto.getAge()).build()));
-    }
 
 
     /**
@@ -55,7 +48,7 @@ public class UserController {
     public ResponseEntity<?> updateUser(@PathVariable("id") int id,@RequestBody UserDto userDto){
 
         User user = userRepository.findById(id).orElse(new User());
-        return ResponseEntity.ok(userRepository.save(User.builder().name(userDto.getName()).age(userDto.getAge()).build()));
+        return ResponseEntity.ok(userRepository.save(User.builder().username(userDto.getUsername()).build()));
     }
 
     /**
