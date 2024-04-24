@@ -29,7 +29,7 @@ public class UserController {
      * @return danh sách user
      */
     @GetMapping
-    public ResponseEntity<?> getUser(){
+    public ResponseEntity<?> getUsers(){
 
         return ResponseEntity.ok(userRepository.findAll());
     }
