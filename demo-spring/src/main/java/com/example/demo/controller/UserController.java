@@ -5,7 +5,9 @@ import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import jakarta.annotation.PostConstruct;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +47,7 @@ public class UserController {
      * @return
      */
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable("id") int id,@RequestBody UserDto userDto){
+    public ResponseEntity<?> updateUser(@PathVariable("id") int id,@RequestBody @Valid UserDto userDto){
 
         User user = userRepository.findById(id).orElse(new User());
         return ResponseEntity.ok(userRepository.save(User.builder().username(userDto.getUsername()).build()));

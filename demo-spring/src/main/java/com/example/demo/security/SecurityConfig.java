@@ -102,11 +102,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(authorizeRequests -> authorizeRequests
+        http.httpBasic(Customizer.withDefaults() )
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/users","/api/v1/users/**").authenticated()
-        ).httpBasic(Customizer.withDefaults() )
+                        .requestMatchers("/api/v1/admins","/api/v1/admins/**").hasAnyAuthority("ADMIN")
+        )
                 .cors(t -> t.configurationSource(corsConfigurationSource()))
+                .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(
                         sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider());
