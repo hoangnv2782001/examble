@@ -35,6 +35,8 @@ public class User implements UserDetails {
     @Column(name = "role")
     private Set<Role> roles;
 
+    @Embedded
+    private Address address;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
