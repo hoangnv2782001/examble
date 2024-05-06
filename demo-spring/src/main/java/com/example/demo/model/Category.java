@@ -22,8 +22,9 @@ public class Category {
     @Id
     private int id;
 
+
     private String name;
 
-    @OneToMany
+    @OneToMany()
     private List<Product> products;
 }

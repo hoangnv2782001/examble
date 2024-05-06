@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.dto.CategoryDto;
 import com.example.demo.model.Category;
 import com.example.demo.repository.CategoryRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +21,11 @@ public class CategoryServiceImpl implements CategoryService{
     private final CategoryRepository categoryRepository;
     private static final Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
     @CacheEvict("categories")
+    @Transactional
     @Override
-    public void createCategory(CategoryDto categoryDto) {
+    public Category createCategory(CategoryDto categoryDto) {
         Category category = Category.builder().name(categoryDto.getName()).build();
-        categoryRepository.save(category);
+        return categoryRepository.save(category);
     }
 
     @Override
