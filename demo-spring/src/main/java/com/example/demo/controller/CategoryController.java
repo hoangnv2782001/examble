@@ -16,8 +16,8 @@ public class CategoryController {
     @PostMapping
     public ResponseEntity<?> createCategory(@RequestBody CategoryDto categoryDto){
 
-        categoryService.createCategory(categoryDto);
-        return ResponseEntity.ok().build();
+
+        return ResponseEntity.ok(categoryService.createCategory(categoryDto));
     }
 
     @DeleteMapping("/{id}")
@@ -35,7 +35,7 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getCategories(@PathVariable("id") int id){
+    public ResponseEntity<?> getCategories(){
 
 
         return ResponseEntity.ok(categoryService.getCategories());

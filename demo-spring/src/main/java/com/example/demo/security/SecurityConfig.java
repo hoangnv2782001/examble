@@ -108,7 +108,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/users","/api/v1/users/**").authenticated()
                         .requestMatchers("/api/v1/admins","/api/v1/admins/**").hasAnyAuthority("ADMIN")
-                        .requestMatchers("/api/v1/category","/api/v1/category/**").authenticated()
+                        .requestMatchers("/api/v1/category","/api/v1/category/**","/api/v1/product","/api/v1/product/**").authenticated()
         )
                 .cors(t -> t.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)

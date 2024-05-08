@@ -3,16 +3,15 @@ package com.example.demo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-@NoArgsConstructor
 @Data
 @AllArgsConstructor
-@Builder
-public class CategoryDto {
-
+@RequiredArgsConstructor
+public class ProductDto {
     private String name;
 
+    private int price;
 
-
+    private int categoryId;
 }

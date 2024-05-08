@@ -66,6 +66,10 @@ public class LoggingAspect {
         System.out.println("Exception thrown "+joinPoint.toString());
     }
 
+    @AfterThrowing("within(com.example.demo.service.*)")
+    public void logExceptionsService(JoinPoint joinPoint){
+        System.out.println(joinPoint.toString());
+    }
     @Around("loggingController()")
     public Object loggingAroundAdvice(ProceedingJoinPoint proceedingJoinPoint){
         System.out.println("Before ....");
