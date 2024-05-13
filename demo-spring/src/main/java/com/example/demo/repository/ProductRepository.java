@@ -4,10 +4,8 @@ import com.example.demo.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 @Repository
@@ -61,5 +59,6 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
      * @return
      */
     @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    @Query("SELECT p FROM Product p where p.price > 100")
     List<Product> getProduct(int id);
 }

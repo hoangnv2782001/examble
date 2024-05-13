@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.dto.CategoryDto;
 import com.example.demo.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class CategoryController {
 
     private final CategoryService categoryService;
+
+    @Value("${spring.datasource.url}")
+    private String url;
 
     @PostMapping
     public ResponseEntity<?> createCategory(@RequestBody CategoryDto categoryDto){
@@ -45,6 +49,7 @@ public class CategoryController {
     public ResponseEntity<?> getCategory(@PathVariable("id") int id){
 
 
+        System.out.println("url "+url);
         return ResponseEntity.ok(categoryService.getCategory(id));
     }
 

@@ -59,11 +59,11 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     @Transactional
     public Category getCategory(int id) {
-        List<Product> products = productRepository.getProductByCategoryId(id);
+//        List<Product> products = productRepository.getProductByCategoryId(id);
 
         Category category = categoryRepository.findById(id).orElse(null);
 
-        category.setProducts(products);
+//        category.setProducts(products);
 
         return category;
     }

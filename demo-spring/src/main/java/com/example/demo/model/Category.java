@@ -23,6 +23,6 @@ public class Category {
 
     private String name;
 
-    @OneToMany()
+    @OneToMany
     private List<Product> products;
 }
