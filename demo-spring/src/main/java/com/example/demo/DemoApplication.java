@@ -14,9 +14,9 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext app = (ApplicationContext) SpringApplication.run(DemoApplication.class, args);
 
-		Animal animal = app.getBean(Animal.class);
+		Dog animal = app.getBean(Dog.class);
 
-		System.out.println("name animal :"+animal.getName());
+		animal.sua();
 	}
 
 }
